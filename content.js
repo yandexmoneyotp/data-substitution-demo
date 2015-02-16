@@ -21,7 +21,8 @@ chrome.storage.local.get(null, function(items){
 
 				$(starred_number_selector).html($(starred_number_selector).html().replace(starred_substituted_number, starred_visible_number));
 				$(number_selector).html($(number_selector).html().replace(substituted_number, visible_number));
-				alert("Номер был заменён! Если вы подтвердите платеж, реальная оплата пойдёт не на "+visible_number+", а на "+substituted_number+"!");
+				if ($(number_selector).html().match(visible_number))
+					alert("Номер был заменён! Если вы подтвердите платеж, реальная оплата пойдёт не на "+visible_number+", а на "+substituted_number+"!");
 			}
 			
 			// thank you page
